@@ -1,0 +1,23 @@
+create env => python3 -m venv venv
+activate env in root where env and employeeApp ares => source venv/bin/activate
+install DRF => pip3 install djangorestframework markdown django-filter
+create project =>  django-admin startproject employeeApp
+run project => python manage.py runserver
+add in setting.py in installed_app =>     'rest_framework',  # make Sure to add this line
+run migration =>  python3 manage.py migrate
+create employeeCrud app => python3 manage.py startapp employeeCrud
+add employeeApp in settings too config => 'employeeCrud'
+
+information {
+    After creating just execute these two commands where the first command creates a migration file in our app and the next one makes the changes in the database.
+
+$ python3 manage.py makemigrations
+$ python3 manage.py migrate
+}
+
+
+
+create employee => http://127.0.0.1:8000/employee/api/create
+get employee list => http://127.0.0.1:8000/employee/api
+update employee => http://127.0.0.1:8000/employee/api/{id}
+delete employee by id => http://127.0.0.1:8000/employee/api/{id}/delete
