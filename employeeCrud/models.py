@@ -6,3 +6,6 @@ class Employee(models.Model):
     employee_email = models.TextField()
     employee_mobile = models.TextField(null=True)
     created_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.employee_name
